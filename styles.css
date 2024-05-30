@@ -57,7 +57,7 @@ nav ul li {
 }
 
 nav ul li a img {
-    height: 40px; /* Увеличение размера кнопок */
+    height: 50px; /* Увеличение размера кнопок */
 }
 
 nav ul li.dropdown {
@@ -93,70 +93,21 @@ main {
     padding: 20px;
 }
 
-.search-results {
-    margin-top: 20px;
-}
-
-.category-header {
+.categories {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-.category-header img {
-    height: 50px;
+.category {
+    text-align: center;
+    margin: 10px;
 }
 
-.category-header h1 {
-    color: #ff9900;
-}
-
-.results {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.result-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid #ff9900;
-    border-radius: 10px;
-    background-color: #fff4e6;
-}
-
-.result-item img {
-    height: 100px;
-}
-
-.result-item .details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.result-item .details h2 {
-    margin: 0;
-    color: #ff9900;
-}
-
-.result-item .details p {
-    margin: 0;
-}
-
-.chat-btn, .profile-btn {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff9900;
-    color: #fff;
-    cursor: pointer;
-}
-
-.chat-btn:hover, .profile-btn:hover {
-    background-color: #ffc36a;
+.category img {
+    width: 150px;
+    height: auto;
 }
 
 footer {
