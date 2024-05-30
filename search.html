@@ -12,7 +12,7 @@
         }
 
         .category-header img {
-            width: 150px;
+            width: 150px; /* Установите нужный размер */
             height: auto;
         }
 
@@ -64,6 +64,57 @@
         .details button:hover {
             background-color: #ffc36a;
         }
+
+        .filter-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff9900;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .filter-popup h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .filter-popup label {
+            display: block;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .filter-popup input[type="range"],
+        .filter-popup input[type="checkbox"],
+        .filter-popup input[type="number"],
+        .filter-popup select {
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        .filter-popup .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .filter-popup .buttons button {
+            background-color: #fff;
+            color: #ff9900;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-popup .buttons button:hover {
+            background-color: #ffc36a;
+        }
     </style>
 </head>
 <body>
@@ -77,6 +128,7 @@
         </div>
         <nav>
             <ul>
+                <li><a href="index.html"><img src="Consult_Me_V2_Back_Home.png" alt="Home"></a></li>
                 <li><a href="profile.html"><img src="Consult_Me_V2_Main_Profile.png" alt="Profile"></a></li>
                 <li><a href="chat.html"><img src="Consult_Me_V2_Main_Chat.png" alt="Chat"></a></li>
                 <li><a href="payment.html"><img src="Consult_Me_V2_Main_Payment.png" alt="Payment"></a></li>
@@ -88,6 +140,7 @@
                         <a href="#">RU</a>
                     </div>
                 </li>
+                <li><button id="filter-button"><img src="Consult_Me_V2_Filter.png" alt="Filter"></button></li>
             </ul>
         </nav>
     </header>
@@ -124,6 +177,33 @@
             <p>Ad space</p>
         </div>
     </footer>
+
+    <div class="filter-popup" id="filter-popup">
+        <h2>Filter Options</h2>
+        <label for="rating-range">Rating</label>
+        <input type="range" id="rating-range" min="1" max="10" step="0.1">
+        
+        <label for="clients-range">Number of Clients</label>
+        <input type="number" id="clients-range" min="1" max="1000">
+        
+        <label for="price-range">Price</label>
+        <input type="range" id="price-range" min="1" max="100">
+        
+        <label for="language-select">Language</label>
+        <select id="language-select" multiple>
+            <option value="LV">LV</option>
+            <option value="EN">EN</option>
+            <option value="RU">RU</option>
+        </select>
+        
+        <label for="certificate-check">Certificate</label>
+        <input type="checkbox" id="certificate-check">
+        
+        <div class="buttons">
+            <button id="apply-filters">Apply</button>
+            <button id="close-filter">Close</button>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -165,6 +245,19 @@
                 document.getElementById('category-image').src = 'default.png';
                 document.getElementById('category-title').textContent = 'Unknown Category';
             }
+
+            document.getElementById('filter-button').addEventListener('click', function() {
+                document.getElementById('filter-popup').style.display = 'block';
+            });
+
+            document.getElementById('close-filter').addEventListener('click', function() {
+                document.getElementById('filter-popup').style.display = 'none';
+            });
+
+            document.getElementById('apply-filters').addEventListener('click', function() {
+                // Here you can add the logic to apply the filters to your search results
+                document.getElementById('filter-popup').style.display = 'none';
+            });
         });
     </script>
 </body>
