@@ -35,10 +35,11 @@
     <main>
         <section class="search-results">
             <div class="category-header">
-                <img src="Consult_Me_V2_Main_Category_IT_Joma.png" alt="IT joma">
-                <h1>IT joma</h1>
+                <img id="category-image" src="" alt="Category">
+                <h1 id="category-title"></h1>
             </div>
             <div class="results">
+                <!-- Example results, replace with dynamic content as needed -->
                 <div class="result-item">
                     <img src="path/to/expert1.png" alt="Expert 1">
                     <div class="details">
@@ -52,32 +53,7 @@
                         <img src="Consult_Me_V2_Main_Certificate.png" alt="Certificate">
                     </div>
                 </div>
-                <div class="result-item">
-                    <img src="path/to/expert2.png" alt="Expert 2">
-                    <div class="details">
-                        <h2>Juris Kalniņš</h2>
-                        <p>Rating: 9.1</p>
-                        <p>Clients: 54</p>
-                        <p>Price: ~10.00€</p>
-                        <p>Languages: LV/EN</p>
-                        <button class="chat-btn">Chat</button>
-                        <button class="profile-btn">Profile</button>
-                        <img src="Consult_Me_V2_Main_Certificate.png" alt="Certificate">
-                    </div>
-                </div>
-                <div class="result-item">
-                    <img src="path/to/expert3.png" alt="Expert 3">
-                    <div class="details">
-                        <h2>Līga Ozoliņa</h2>
-                        <p>Rating: 8.1</p>
-                        <p>Clients: 54</p>
-                        <p>Price: ~9.45€</p>
-                        <p>Languages: LV</p>
-                        <button class="chat-btn">Chat</button>
-                        <button class="profile-btn">Profile</button>
-                        <img src="Consult_Me_V2_Main_Certificate.png" alt="Certificate">
-                    </div>
-                </div>
+                <!-- Add more results as needed -->
             </div>
         </section>
     </main>
@@ -88,5 +64,48 @@
             <p>Ad space</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+
+            const categories = {
+                'IT': {
+                    img: 'Consult_Me_V2_Main_Category_IT_Joma.png',
+                    title: 'IT joma'
+                },
+                'Health': {
+                    img: 'Consult_Me_V2_Main_Category_Veselibas_joma.png',
+                    title: 'Veselības joma'
+                },
+                'Household': {
+                    img: 'Consult_Me_V2_Main_Category_Majsamniecibas_joma.png',
+                    title: 'Mājsaimniecības joma'
+                },
+                'Auto': {
+                    img: 'Consult_Me_V2_Main_Category_Auto_joma.png',
+                    title: 'Auto joma'
+                },
+                'Finance': {
+                    img: 'Consult_Me_V2_Main_Category_Finansu_joma.png',
+                    title: 'Finanšu joma'
+                },
+                'Legal': {
+                    img: 'Consult_Me_V2_Main_Category_Juridiska_joma.png',
+                    title: 'Juridiskā joma'
+                }
+            };
+
+            if (categories[category]) {
+                document.getElementById('category-image').src = categories[category].img;
+                document.getElementById('category-title').textContent = categories[category].title;
+            } else {
+                // Default category if none selected or invalid category
+                document.getElementById('category-image').src = 'default.png';
+                document.getElementById('category-title').textContent = 'Unknown Category';
+            }
+        });
+    </script>
 </body>
 </html>
