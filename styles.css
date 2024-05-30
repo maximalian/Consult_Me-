@@ -56,8 +56,9 @@ nav ul li {
     margin-left: 20px;
 }
 
-nav ul li a img {
-    height: 50px; /* Увеличение размера кнопок */
+nav ul li a img,
+nav ul li button img {
+    height: 40px; /* Увеличение размера кнопок */
 }
 
 nav ul li.dropdown {
@@ -93,21 +94,72 @@ main {
     padding: 20px;
 }
 
-.categories {
+.search-results {
+    margin-top: 20px;
+}
+
+.category-header {
     display: flex;
+    align-items: center;
+    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+}
+
+.category-header img {
+    height: 50px;
+}
+
+.category-header h1 {
+    color: #ff9900;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.category {
-    text-align: center;
-    margin: 10px;
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ff9900;
+    border-radius: 10px;
+    background-color: #fff4e6;
 }
 
-.category img {
-    width: 150px;
-    height: auto;
+.result-item img {
+    height: 100px;
+}
+
+.result-item .details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-item .details h2 {
+    margin: 0;
+    color: #ff9900;
+}
+
+.result-item .details p {
+    margin: 0;
+    color: #000;
+}
+
+.chat-btn, .profile-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9900;
+    color: #fff;
+    cursor: pointer;
+}
+
+.chat-btn:hover, .profile-btn:hover {
+    background-color: #ffc36a;
 }
 
 footer {
@@ -122,4 +174,55 @@ footer {
 
 .advertisement {
     margin-top: 10px;
+}
+
+.filter-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff9900;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.filter-popup h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.filter-popup label {
+    display: block;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.filter-popup input[type="range"],
+.filter-popup input[type="checkbox"],
+.filter-popup input[type="number"],
+.filter-popup select {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.filter-popup .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.filter-popup .buttons button {
+    background-color: #fff;
+    color: #ff9900;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-popup .buttons button:hover {
+    background-color: #ffc36a;
 }
