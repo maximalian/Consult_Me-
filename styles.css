@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #ff9900;
+    background-color: #ff9900; /* Верхний колонтитул оранжевый */
     color: #fff;
     padding: 10px 20px;
     display: flex;
@@ -57,7 +57,7 @@ nav ul li {
 }
 
 nav ul li a img {
-    height: 30px;
+    height: 40px; /* Увеличение размера кнопок */
 }
 
 nav ul li.dropdown {
@@ -120,7 +120,7 @@ section.categories .category p {
 }
 
 footer {
-    background-color: #ff9900;
+    background-color: #ff9900; /* Нижний колонтитул оранжевый */
     color: #fff;
     text-align: center;
     padding: 10px 0;
